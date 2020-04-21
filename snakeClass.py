@@ -196,7 +196,7 @@ def plot_seaborn(array_counter, array_score):
 	plt.show()
 
 
-def run(display_option, speed, params):
+def run(display_option, speed, params, on_game_finished):
 	pygame.init()
 	agent = DQNAgent(params)
 	weights_filepath = params['weights_path']
@@ -261,12 +261,14 @@ def run(display_option, speed, params):
 		if params['train']:
 			agent.replay_new(agent.memory, params['batch_size'])
 		counter_games += 1
-		game_print(f'Game {counter_games}      Score: {game.score}')
+		on_game_finished(counter_games, game.score)
+
 		score_plot.append(game.score)
 		counter_plot.append(counter_games)
+
 	if params['train']:
 		agent.model.save_weights(params['weights_path'])
-	plot_seaborn(counter_plot, score_plot)
+	# plot_seaborn(counter_plot, score_plot)
 
 
 if __name__ == '__main__':
