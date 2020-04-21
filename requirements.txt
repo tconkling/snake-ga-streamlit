@@ -6,3 +6,5 @@ pygame==2.0.0.dev6
 seaborn==0.10.0
 streamlit==0.57.3
 tensorflow==1.14.0
+pandas
+numpy
