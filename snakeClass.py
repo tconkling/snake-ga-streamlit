@@ -1,4 +1,3 @@
-import os
 import pygame
 import argparse
 import numpy as np
@@ -203,10 +202,10 @@ def run(display_option, speed, params):
     counter_plot = []
     record = 0
     while counter_games < params['episodes']:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
+        # for event in pygame.event.get():
+        #     if event.type == pygame.QUIT:
+        #         pygame.quit()
+        #         quit()
         # Initialize classes
         game = Game(440, 440)
         player1 = game.player
