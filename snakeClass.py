@@ -18,7 +18,7 @@ def define_parameters():
     params['first_layer_size'] = 150   # neurons in the first layer
     params['second_layer_size'] = 150   # neurons in the second layer
     params['third_layer_size'] = 150    # neurons in the third layer
-    params['episodes'] = 150            
+    params['episodes'] = 150
     params['memory_size'] = 2500
     params['batch_size'] = 500
     params['weights_path'] = 'weights/weights.hdf5'
@@ -164,6 +164,7 @@ def display(player, food, game, record):
 
 def update_screen():
     pygame.display.update()
+    pygame.event.get()
 
 
 def initialize_game(player, game, food, agent, batch_size):
