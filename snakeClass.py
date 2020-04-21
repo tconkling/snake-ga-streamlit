@@ -7,6 +7,12 @@ from DQN import DQNAgent
 from random import randint
 from keras.utils import to_categorical
 
+import streamlit as st
+
+
+def game_print(*args):
+	st.write(*args)
+
 
 #################################
 #   Define parameters manually  #
@@ -196,7 +202,7 @@ def run(display_option, speed, params):
 	weights_filepath = params['weights_path']
 	if params['load_weights']:
 		agent.model.load_weights(weights_filepath)
-		print("weights loaded")
+		game_print("weights loaded")
 
 	counter_games = 0
 	score_plot = []
@@ -255,7 +261,7 @@ def run(display_option, speed, params):
 		if params['train']:
 			agent.replay_new(agent.memory, params['batch_size'])
 		counter_games += 1
-		print(f'Game {counter_games}      Score: {game.score}')
+		game_print(f'Game {counter_games}      Score: {game.score}')
 		score_plot.append(game.score)
 		counter_plot.append(counter_games)
 	if params['train']:

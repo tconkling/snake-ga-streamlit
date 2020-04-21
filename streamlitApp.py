@@ -11,5 +11,5 @@ with mock.patch("snakeClass.pygame"):
 
 	pygame.font.init()
 	params = snakeClass.define_parameters()
-	params['bayesian_optimization'] = False    # Use bayesOpt.py for Bayesian Optimization
+	params['bayesian_optimization'] = False
 	snakeClass.run(display_option=False, speed=50, params=params)
