@@ -2,6 +2,8 @@ from unittest import mock
 import pygame
 import streamlit as st
 
+st.image("snake.gif")
+
 st.write("Initializing snake!")
 
 # mock out pygame when running in Streamlit, because it breaks when
@@ -12,4 +14,5 @@ with mock.patch("snakeClass.pygame"):
 	pygame.font.init()
 	params = snakeClass.define_parameters()
 	params['bayesian_optimization'] = False
+	params['train'] = True
 	snakeClass.run(display_option=False, speed=50, params=params)
