@@ -1,0 +1,8 @@
+# Keras 2.3.1 (the latest as of today) has issues running in a Streamlit thread.
+# We pin to 2.2.5 instead, and also tensorflow 1.14.0.
+
+Keras==2.2.5
+pygame==2.0.0.dev6
+seaborn==0.10.0
+streamlit==0.57.3
+tensorflow==1.14.0
